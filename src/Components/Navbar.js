@@ -3,10 +3,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronRight, faUsers, faClipboardList , faChartPie , faUserGroup , faGear, faLifeRing } from '@fortawesome/free-solid-svg-icons';
 import '../Styles/Navbar.css';
 import MonthlySummary from "./Items/MonthlySummery";
+import {useNavigate} from "react-router-dom";
 
 const Navbar = () => {
-    const [dropdown1Active, setDropdown1Active] = useState(false);
     const [dropdown2Active, setDropdown2Active] = useState(false);
+
+    const navigate = useNavigate();
+
+    const handleWaitingRoom = () => {
+        navigate('/waiting-room');
+    };
 
     return (
         <div className="navbar">
@@ -16,17 +22,10 @@ const Navbar = () => {
                 </div>
                 <ul className="menu">
                     <li>
-                        <div className="dropdown" onClick={() => setDropdown1Active(!dropdown1Active)}>
+                        <div className="button" onClick={handleWaitingRoom}>
                             <FontAwesomeIcon icon={faUsers} />
                             <span>Salon d'attente</span>
-                            <FontAwesomeIcon icon={dropdown1Active ? faChevronDown : faChevronRight} />
                         </div>
-                        {dropdown1Active && (
-                            <ul className="submenu">
-                                <li><a href="#item1">Item 1</a></li>
-                                <li><a href="#item2">Item 2</a></li>
-                            </ul>
-                        )}
                     </li>
                     <li>
                         <div className="button">

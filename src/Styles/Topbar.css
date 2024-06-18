@@ -28,7 +28,7 @@
     align-items: center;
 }
 
-.notification-btn, .theme-btn {
+.home-btn, .notification-btn, .theme-btn {
     background-color: white;
     padding: 10px;
     border: none;

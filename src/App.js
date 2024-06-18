@@ -15,6 +15,7 @@ function App() {
                     <div className="content">
                         <Routes>
                             <Route path="/waiting-room" element={< WaitingRoom />} />
+                            {/*<Route path="/manage-reservation" element={< ManageReservation />} />*/}
                         </Routes>
                     </div>
                 </div>
