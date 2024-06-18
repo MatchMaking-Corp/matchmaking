@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faChevronRight, faHouseUser, faClipboardList , faChartPie , faUserGroup , faGear, faLifeRing } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faChevronRight, faUsers, faClipboardList , faChartPie , faUserGroup , faGear, faLifeRing } from '@fortawesome/free-solid-svg-icons';
 import '../Styles/Navbar.css';
 import MonthlySummary from "./Items/MonthlySummery";
 
@@ -17,7 +17,7 @@ const Navbar = () => {
                 <ul className="menu">
                     <li>
                         <div className="dropdown" onClick={() => setDropdown1Active(!dropdown1Active)}>
-                            <FontAwesomeIcon icon={faHouseUser} />
+                            <FontAwesomeIcon icon={faUsers} />
                             <span>Salon d'attente</span>
                             <FontAwesomeIcon icon={dropdown1Active ? faChevronDown : faChevronRight} />
                         </div>

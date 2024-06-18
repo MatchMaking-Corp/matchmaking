@@ -1,24 +1,26 @@
 import React from 'react';
+import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
-import './App.css';
-import Topbar from "./Components/Topbar";
+import Topbar from './Components/Topbar';
+import WaitingRoom from './Page/WaitingRoom';
 
 function App() {
-  return (
-      <Router>
-        <div className="App">
-          <div className="header">
-            <div className="navbar-container">
-                <Navbar/>
-                <Topbar/>
+    return (
+        <Router>
+            <div className="App">
+                <Navbar />
+                <div className="main-content">
+                    <Topbar />
+                    <div className="content">
+                        <Routes>
+                            <Route path="/waiting-room" element={< WaitingRoom />} />
+                        </Routes>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div className="content">
-          </div>
-        </div>
-      </Router>
-  );
+        </Router>
+    );
 }
 
 export default App;
