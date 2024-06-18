@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/matchmaking/static/css/main.72e06d0b.css",
+    "main.js": "/matchmaking/static/js/main.71d89f9b.js",
+    "static/js/453.eee502cc.chunk.js": "/matchmaking/static/js/453.eee502cc.chunk.js",
+    "index.html": "/matchmaking/index.html",
+    "main.72e06d0b.css.map": "/matchmaking/static/css/main.72e06d0b.css.map",
+    "main.71d89f9b.js.map": "/matchmaking/static/js/main.71d89f9b.js.map",
+    "453.eee502cc.chunk.js.map": "/matchmaking/static/js/453.eee502cc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.72e06d0b.css",
+    "static/js/main.71d89f9b.js"
+  ]
+}
