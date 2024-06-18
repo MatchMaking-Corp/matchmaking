@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Topbar from './Components/Topbar';
 import WaitingRoom from './Page/WaitingRoom';
+import ManageReservation from './Page/ManageReservation'
 
 function App() {
     return (
@@ -15,7 +16,7 @@ function App() {
                     <div className="content">
                         <Routes>
                             <Route path="/waiting-room" element={< WaitingRoom />} />
-                            {/*<Route path="/manage-reservation" element={< ManageReservation />} />*/}
+                            <Route path="/manage-reservation" element={< ManageReservation />} />
                         </Routes>
                     </div>
                 </div>

@@ -4,6 +4,7 @@ import { faChevronDown, faChevronRight, faUsers, faClipboardList , faChartPie , 
 import '../Styles/Navbar.css';
 import MonthlySummary from "./Items/MonthlySummery";
 import {useNavigate} from "react-router-dom";
+import Logo from "../Sources/logos/matchmaking.png"
 
 const Navbar = () => {
     const [dropdown2Active, setDropdown2Active] = useState(false);
@@ -13,12 +14,16 @@ const Navbar = () => {
     const handleWaitingRoom = () => {
         navigate('/waiting-room');
     };
+    const handleManageReservation = () => {
+        navigate('/manage-reservation');
+    };
 
     return (
         <div className="navbar">
             <div className="top-section">
                 <div className="logo">
-                    <h2>Logo</h2>
+                    <img src={Logo} alt="Logo"
+                         className="logo-img"/>
                 </div>
                 <ul className="menu">
                     <li>
@@ -28,7 +33,7 @@ const Navbar = () => {
                         </div>
                     </li>
                     <li>
-                        <div className="button">
+                        <div className="button" onClick={handleManageReservation}>
                             <FontAwesomeIcon icon={faClipboardList} />
                             <span>Gestion des réservations</span>
                         </div>
