@@ -1,0 +1,107 @@
+.topbar {
+    background-color: #f2f2f2;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 998;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.left {
+    flex: 0.7;
+}
+
+.left h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+}
+
+.notification-btn, .theme-btn {
+    background-color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 25%;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 10px;
+    color: #333;
+}
+
+.theme-btn {
+    color: #333;
+}
+
+.dropdown {
+    position: relative;
+    user-select: none;
+}
+
+.dropdown .profile-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.profile-icon {
+    background-color: #ff521c;
+    color: white;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px; /* Ajustement demandé */
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
+
+.submenu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%; /* Positionne le sous-menu en dessous du bouton */
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999; /* Assure que le sous-menu est au-dessus de tout */
+}
+
+.submenu li {
+    padding: 8px 20px;
+}
+
+.submenu li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.submenu li a:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown-icon {
+    margin-left: 10px; /* Ajustement demandé */
+}
