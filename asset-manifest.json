@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/matchmaking/static/css/main.d795bb87.css",
-    "main.js": "/matchmaking/static/js/main.40ae9737.js",
+    "main.css": "/matchmaking/static/css/main.5f87a409.css",
+    "main.js": "/matchmaking/static/js/main.2003f27a.js",
     "static/js/453.eee502cc.chunk.js": "/matchmaking/static/js/453.eee502cc.chunk.js",
     "static/media/matchmaking.png": "/matchmaking/static/media/matchmaking.673dcf694a75086beb45.png",
     "index.html": "/matchmaking/index.html",
-    "main.d795bb87.css.map": "/matchmaking/static/css/main.d795bb87.css.map",
-    "main.40ae9737.js.map": "/matchmaking/static/js/main.40ae9737.js.map",
+    "main.5f87a409.css.map": "/matchmaking/static/css/main.5f87a409.css.map",
+    "main.2003f27a.js.map": "/matchmaking/static/js/main.2003f27a.js.map",
     "453.eee502cc.chunk.js.map": "/matchmaking/static/js/453.eee502cc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d795bb87.css",
-    "static/js/main.40ae9737.js"
+    "static/css/main.5f87a409.css",
+    "static/js/main.2003f27a.js"
   ]
 }
