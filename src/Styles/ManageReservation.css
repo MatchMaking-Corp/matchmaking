@@ -50,7 +50,7 @@
     font-family: inherit;
 }
 
-.react-calendar__navigation {
+.react-calendar__navigation, .react-calendar__month-view__weekdays {
     display: none; /* Masquer les flèches de navigation par défaut */
 }
 
@@ -83,7 +83,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-top: -30px;
 }
 
 .reservation-cards {
@@ -130,6 +130,7 @@
     align-items: center;
     gap: 5px;
     cursor: pointer;
+    margin-top: 50px;
 }
 
 .percentage-card {
@@ -139,6 +140,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    margin-top: 500px;
 }
 
 .percentage-card h1 {

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowTurnUp, faPlus } from '@fortawesome/free-solid-svg-icons';
 import '../Styles/ManageReservation.css';
 
 const ManageReservation = () => {
@@ -12,14 +14,6 @@ const ManageReservation = () => {
     const formatMonthYear = (date) => {
         const options = { month: 'long', year: 'numeric' };
         return date.toLocaleDateString('fr-FR', options);
-    };
-
-    const formatDay = (date) => {
-        if (date.getDay() === 0) {
-            return 'D';
-        } else {
-            return date.getDate();
-        }
     };
 
     const generateReservations = () => {
@@ -60,23 +54,14 @@ const ManageReservation = () => {
                             const isToday = date.getDate() === new Date().getDate() && date.getMonth() === new Date().getMonth() && date.getFullYear() === new Date().getFullYear();
                             return isToday ? "today" : null;
                         }}
-                        tileContent={({ date, view }) => {
-                            if (view === 'month') {
-                                return (
-                                    <div className="calendar-day">
-                                        <div className="day-initial">{formatDay(date)}</div>
-                                        <div className="day-number">{date.getDate()}</div>
-                                    </div>
-                                );
-                            }
-                        }}
                     />
                 </div>
             </div>
             <div className="reservation-column">
                 {/* Contenu de la deuxième colonne (réservations) */}
                 <div className="reservation-header">
-                    <h3>Header gauche</h3>
+                    <h3>Détails</h3>
+                    <span>{reservations.length}</span>
                 </div>
                 <div className="reservation-cards">
                     {reservations.map((reservation, index) => (
@@ -95,11 +80,11 @@ const ManageReservation = () => {
                 <div className="floating-buttons">
                     <button className="add-button">
                         <span>Ajouter</span>
-                        {/* Ajoutez ici votre icône d'ajout */}
+                        <FontAwesomeIcon icon={faPlus}/>
                     </button>
                     <div className="percentage-card">
                         <h1>75%</h1>
-                        {/* Ajoutez ici votre icône de flèche vers le haut */}
+                        <FontAwesomeIcon icon={faArrowTurnUp}/>
                     </div>
                 </div>
             </div>
