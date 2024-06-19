@@ -5,78 +5,8 @@
     margin-left: 20px;
 }
 
-.calendar-column, .reservation-column, .action-column {
+.calendar-container, .reservation-column, .action-column {
     flex: 1;
-}
-
-.calendar-container {
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
-.calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.month-year {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.navigation {
-    display: flex;
-    gap: 10px;
-}
-
-.navigation button {
-    background: none;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.react-calendar {
-    width: 100%;
-    max-width: 300px;
-    border: none;
-    border-radius: 8px;
-    box-shadow: none;
-    font-family: inherit;
-}
-
-.react-calendar__navigation, .react-calendar__month-view__weekdays {
-    display: none; /* Masquer les flèches de navigation par défaut */
-}
-
-.calendar-day {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    margin-bottom: 5px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-}
-
-.calendar-day:hover {
-    background-color: #ff521c; /* Couleur de surbrillance au survol */
-}
-
-.day-initial {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.day-number {
-    font-size: 18px;
 }
 
 .reservation-header {
@@ -113,15 +43,21 @@
 
 .floating-buttons {
     position: sticky;
-    top: 20px;
+    top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
 }
 
+.open-rate {
+    margin-top: 400px;
+    margin-bottom: -500px;
+    font-weight: bold;
+}
+
 .add-button {
-    background-color: orange;
+    background-color: #ff0b0b;
     color: white;
     border: none;
     padding: 15px 30px;
@@ -130,7 +66,8 @@
     align-items: center;
     gap: 5px;
     cursor: pointer;
-    margin-top: 50px;
+    margin-top: 30px;
+    font-weight: bold;
 }
 
 .percentage-card {
@@ -141,10 +78,291 @@
     align-items: center;
     gap: 5px;
     margin-top: 500px;
+    color: green;
+    font-size: 36px;
 }
 
 .percentage-card h1 {
     color: green;
     font-size: 36px;
     margin: 0;
+}
+
+.react-calendar {
+    width: 350px;
+    max-width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.125em;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-right: 75px;
+    margin-left: 40px;
+}
+
+.react-calendar--doubleView {
+    width: 700px;
+}
+
+.react-calendar--doubleView .react-calendar__viewContainer {
+    display: flex;
+    margin: -0.5em;
+}
+
+.react-calendar--doubleView .react-calendar__viewContainer > * {
+    width: 50%;
+    margin: 0.5em;
+}
+
+.react-calendar,
+.react-calendar *,
+.react-calendar *:before,
+.react-calendar *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.react-calendar button {
+    margin: 0;
+    border: 0;
+    outline: none;
+    border-radius: 8px;
+}
+
+.react-calendar button:enabled:hover {
+    cursor: pointer;
+}
+
+.react-calendar__navigation {
+    display: flex;
+    height: 44px;
+    margin-bottom: 1em;
+}
+
+.react-calendar__navigation button {
+    min-width: 44px;
+    background: none;
+}
+
+.react-calendar__navigation button:disabled {
+    background-color: #f0f0f0;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+    background-color: #e6e6e6;
+}
+
+.react-calendar__month-view__weekdays {
+    text-align: center;
+    text-transform: uppercase;
+    font: inherit;
+    font-size: 0.75em;
+    font-weight: bold;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+    padding: 0.5em;
+}
+
+.react-calendar__month-view__weekNumbers .react-calendar__tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: inherit;
+    font-size: 0.75em;
+    font-weight: bold;
+}
+
+.react-calendar__month-view__days__day--weekend {
+    color: #d10000;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth,
+.react-calendar__decade-view__years__year--neighboringDecade,
+.react-calendar__century-view__decades__decade--neighboringCentury {
+    color: #757575;
+}
+
+.react-calendar__year-view .react-calendar__tile,
+.react-calendar__decade-view .react-calendar__tile,
+.react-calendar__century-view .react-calendar__tile {
+    padding: 2em 0.5em;
+}
+
+.react-calendar__tile {
+    max-width: 100%;
+    padding: 10px 6.6667px;
+    background: none;
+    text-align: center;
+    line-height: 16px;
+    font: inherit;
+    font-size: 0.833em;
+}
+
+.react-calendar__tile:disabled {
+    background-color: #f0f0f0;
+    color: #ababab;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth:disabled,
+.react-calendar__decade-view__years__year--neighboringDecade:disabled,
+.react-calendar__century-view__decades__decade--neighboringCentury:disabled {
+    color: #cdcdcd;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+    background-color: #e6e6e6;
+}
+
+.react-calendar__tile--now {
+    background: #ff0b0b;
+}
+
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+    background: #ff0b0b;
+}
+
+.react-calendar__tile--hasActive {
+    background: #ff0b0b;
+}
+
+.react-calendar__tile--hasActive:enabled:hover,
+.react-calendar__tile--hasActive:enabled:focus {
+    background: #a9d4ff;
+}
+
+.react-calendar__tile--active {
+    background: #ff0b0b;
+    color: white;
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+    background: #ff0b0b;
+}
+
+.react-calendar--selectRange .react-calendar__tile--hover {
+    background-color: #e6e6e6;
+}
+
+.todo-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 50px;
+    margin-right: 50px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: hidden;
+    gap: 10px;
+    width: 300px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.carousel-nav {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.carousel-button {
+    background-color: #ddd;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-button.selected {
+    background-color: #ff0b0b;
+    color: white;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #ccc;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #ff0b0b;
+    transition: width 0.3s ease;
+}
+
+.task-details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: -20px;
+    margin-left: 20px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-button {
+    background-color: #ddd;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.task-button.selected {
+    background-color: #ff0b0b;
+    color: white;
+}
+
+.task-details {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.edit-button {
+    background-color: #ff0b0b;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 15px;
 }
