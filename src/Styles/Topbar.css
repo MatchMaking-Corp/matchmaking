@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 15px 20px;
     position: fixed;
     top: 0;
     left: 0;
@@ -28,11 +28,22 @@
     align-items: center;
 }
 
-.home-btn, .notification-btn, .theme-btn {
+.home-btn, .notification-btn, .theme-btn{
     background-color: white;
     padding: 10px;
     border: none;
     border-radius: 25%;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 10px;
+    color: #333;
+}
+
+.profile {
+    background-color: white;
+    padding: 2px;
+    border: none;
+    border-radius: 5%;
     cursor: pointer;
     font-size: 20px;
     margin-left: 10px;
@@ -58,7 +69,7 @@
 }
 
 .profile-icon {
-    background-color: #ff521c;
+    background-color: #e05d15;
     color: white;
     font-weight: bold;
     width: 30px;

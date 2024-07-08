@@ -17,7 +17,7 @@ const MonthlySummary = () => {
     return (
         <div className="monthly-summary">
             <div className="header">
-                <h4>Résumé du mois</h4>
+                <h4>Résumé du mois dernier</h4>
                 <button className="close-btn" onClick={() => setVisible(false)}>
                     <FontAwesomeIcon icon={faTimes} />
                 </button>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowTurnUp, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faArrowTurnUp, faCirclePlus, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import '../Styles/ManageReservation.css';
 
 const ManageReservation = () => {
@@ -18,24 +18,30 @@ const ManageReservation = () => {
         return date.toLocaleDateString('fr-FR', options);
     };
 
-    const generateReservations = () => {
+    const formatDay = (date) => {
+        const options = { weekday: 'long' };
+        return date.toLocaleDateString('fr-FR', options);
+    };
+
+    const generateReservations = (selectedDate) => {
         const reservations = [];
         for (let i = 14; i <= 19; i++) {
-            const reservationDate = new Date(2024, 0, 1, i, 0); // Janvier 2024, à partir de 14h
+            const reservationDate = new Date(selectedDate);
+            reservationDate.setHours(i, 0);
             reservations.push({
                 time: `${reservationDate.getHours()}:${reservationDate.getMinutes() < 10 ? '0' : ''}${reservationDate.getMinutes()}`,
-                monthYear: "Janvier 2024",
-                day: reservationDate.toLocaleDateString('fr-FR', { weekday: 'long' }),
+                monthYear: formatMonthYear(reservationDate),
+                day: formatDay(reservationDate),
             });
         }
         return reservations;
     };
 
-    const reservations = generateReservations();
+    const reservations = generateReservations(date);
 
     const tasks = [
         { title: 'Terrain 1', progress: 100, details: ['Task 1.1', 'Task 1.2', 'Task 1.3', 'Task 1.4', 'Task 1.5'] },
-        { title: 'Terrain 2', progress: 100, details: ['Maintenance', 'Terrain Fermé', 'Tournois', 'Get the copy for the facebook image', 'Send Invision demo to squad'] },
+        { title: 'Terrain 2', progress: 100, details: ['Maintenance', 'Terrain Fermé', 'Tournois'] },
         { title: 'Terrain 3', progress: 100, details: ['Task 3.1', 'Task 3.2', 'Task 3.3', 'Task 3.4', 'Task 3.5'] },
         { title: 'Terrain 4', progress: 100, details: ['Task 4.1', 'Task 4.2', 'Task 4.3', 'Task 4.4', 'Task 4.5'] },
         { title: 'Terrain 5', progress: 100, details: ['Task 5.1', 'Task 5.2', 'Task 5.3', 'Task 5.4', 'Task 5.5'] },
@@ -73,7 +79,9 @@ const ManageReservation = () => {
                 <div className="todo-column">
                     <div className="carousel-controls">
                         <button onClick={showPrevTasks} disabled={carouselIndex === 0}
-                                className="carousel-nav">{"<"}</button>
+                                className="carousel-nav">
+                            <FontAwesomeIcon icon={faChevronLeft}/>
+                        </button>
                         <div className="carousel">
                             {tasks.slice(carouselIndex, carouselIndex + 3).map((task, index) => (
                                 <button
@@ -90,7 +98,9 @@ const ManageReservation = () => {
                             ))}
                         </div>
                         <button onClick={showNextTasks} disabled={carouselIndex >= tasks.length - 3}
-                                className="carousel-nav">{">"}</button>
+                                className="carousel-nav">
+                            <FontAwesomeIcon icon={faChevronRight}/>
+                        </button>
                     </div>
                     <div className="task-details-container">
                         {tasks[selectedTask].details.map((taskDetail, index) => (
@@ -111,24 +121,33 @@ const ManageReservation = () => {
                 </div>
                 <div className="reservation-cards">
                     {reservations.map((reservation, index) => (
-                        <div className="reservation-card" key={index}>
+                        <div
+                            className={`reservation-card ${index >= reservations.length - 2 ? 'special-card' : ''}`}
+                            key={index}
+                        >
                             <div className="time">{reservation.time}</div>
                             <div className="details">
                                 <div><strong>{reservation.monthYear}</strong></div>
                                 <div>{reservation.day}</div>
                             </div>
+                            {index >= reservations.length - 2 && (
+                                <div className="card-id">
+                                    <h4>Id : JJD03U</h4>
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>
+
             </div>
             <div className="action-column">
                 {/* Contenu de la troisième colonne (actions) */}
                 <div className="floating-buttons">
                     <button className="add-button">
                         <span>Ajouter</span>
-                        <FontAwesomeIcon icon={faPlus}/>
+                        <FontAwesomeIcon icon={faCirclePlus}/>
                     </button>
-                    <span className="open-rate">Taux d'ouverture</span>
+                    <span className="open-rate">Taux d'occupation</span>
                     <div className="percentage-card">
                         <h1>75%</h1>
                         <FontAwesomeIcon icon={faArrowTurnUp}/>

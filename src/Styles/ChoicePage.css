@@ -1,0 +1,56 @@
+/* ChoicePage.css */
+
+.choice-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #e05d15;
+    text-align: center;
+}
+
+.choice-page-container h1 {
+    margin-bottom: -10px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    margin-top: 5rem;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s;
+    text-align: center;
+    width: 300px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-image-pro {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card-image-user {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1.2em;
+    font-weight: bold;
+}

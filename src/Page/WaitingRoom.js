@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUsers, faUser, faEllipsisV, faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faUsers, faUser, faEllipsisV, faCircleCheck, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import '../Styles/WaitingRoom.css';
 
 const WaitingRoom = () => {
@@ -45,12 +45,11 @@ const WaitingRoom = () => {
             <table className="rounded-table">
                 <thead>
                 <tr>
-                    <th>Utilisateur</th>
+                    <th>Nom du groupe</th>
                     <th>ID du groupe</th>
-                    <th>Status</th>
-                    <th>Time</th>
+                    <th>En attente depuis</th>
                     <th>Terrains Attribué</th>
-                    <th>Taux d'ouverture</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -58,21 +57,20 @@ const WaitingRoom = () => {
                     <tr key={row.id}>
                         <td>{row.user}</td>
                         <td>{row.id}</td>
-                        <td className={`status status-${row.status.toLowerCase()}`}>{row.status}</td>
                         <td>{row.time}</td>
                         <td>{row.allocated}</td>
                         <td className="rate-cell">
-                            {row.rate === 'OK' && <FontAwesomeIcon icon={faCheck} className="rate-icon rate-ok" />}
-                            {row.rate === 'No' && <FontAwesomeIcon icon={faTimes} className="rate-icon rate-no" />}
+                            {row.rate === 'OK' && <FontAwesomeIcon icon={faCircleCheck} className="rate-icon rate-ok" />}
+                            {row.rate === 'No' && <FontAwesomeIcon icon={faTimesCircle} className="rate-icon rate-no" />}
                             {row.rate === 'Wait' && (
                                 <div className="rate-wait">
                                     <FontAwesomeIcon
-                                        icon={faCheck}
+                                        icon={faCircleCheck}
                                         className="rate-icon rate-ok"
                                         onClick={() => handleRateChange(index, 'OK')}
                                     />
                                     <FontAwesomeIcon
-                                        icon={faTimes}
+                                        icon={faTimesCircle}
                                         className="rate-icon rate-no"
                                         onClick={() => handleRateChange(index, 'No')}
                                     />

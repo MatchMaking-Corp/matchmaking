@@ -60,7 +60,7 @@
     flex-grow: 1;
     text-align: left;
     padding-left: 10px;
-    color: #ff521c;
+    color: #e05d15;
 }
 
 .button {
@@ -75,7 +75,7 @@
 .dropdown:hover, .button:hover{
     background-color: #f0f0f0; /* Couleur de fond au survol */
     border-radius: 10px;
-    color: #ff521c;
+    color: #e05d15;
 }
 
 .submenu {

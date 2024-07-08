@@ -74,7 +74,7 @@
 
 .status-inactive {
     background-color: rgba(255, 0, 0, 0.3); /* Red */
-    color: rgba(255, 0, 0, 1);
+    color: #e05d15;
 }
 
 .status-pending {

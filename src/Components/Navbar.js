@@ -11,6 +11,10 @@ const Navbar = () => {
 
     const navigate = useNavigate();
 
+    const handleHome = () => {
+        navigate('/')
+    }
+
     const handleWaitingRoom = () => {
         navigate('/waiting-room');
     };
@@ -21,7 +25,7 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="top-section">
-                <div className="logo">
+                <div className="logo" onClick={handleHome}>
                     <img src={Logo} alt="Logo"
                          className="logo-img"/>
                 </div>

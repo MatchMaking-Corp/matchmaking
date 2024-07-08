@@ -57,7 +57,7 @@
 }
 
 .add-button {
-    background-color: #ff0b0b;
+    background-color: #e05d15;
     color: white;
     border: none;
     padding: 15px 30px;
@@ -178,7 +178,7 @@
 }
 
 .react-calendar__month-view__days__day--weekend {
-    color: #d10000;
+    color: #e05d15;
 }
 
 .react-calendar__month-view__days__day--neighboringMonth,
@@ -220,16 +220,16 @@
 }
 
 .react-calendar__tile--now {
-    background: #ff0b0b;
+    background: #e05d15;
 }
 
 .react-calendar__tile--now:enabled:hover,
 .react-calendar__tile--now:enabled:focus {
-    background: #ff0b0b;
+    background: #e05d15;
 }
 
 .react-calendar__tile--hasActive {
-    background: #ff0b0b;
+    background: #e05d15;
 }
 
 .react-calendar__tile--hasActive:enabled:hover,
@@ -238,13 +238,13 @@
 }
 
 .react-calendar__tile--active {
-    background: #ff0b0b;
+    background: #e05d15;
     color: white;
 }
 
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
-    background: #ff0b0b;
+    background: #e05d15;
 }
 
 .react-calendar--selectRange .react-calendar__tile--hover {
@@ -300,7 +300,7 @@
 }
 
 .carousel-button.selected {
-    background-color: #ff0b0b;
+    background-color: #e05d15;
     color: white;
 }
 
@@ -315,7 +315,7 @@
 
 .progress {
     height: 100%;
-    background-color: #ff0b0b;
+    background-color: #e05d15;
     transition: width 0.3s ease;
 }
 
@@ -343,7 +343,7 @@
 }
 
 .task-button.selected {
-    background-color: #ff0b0b;
+    background-color: #e05d15;
     color: white;
 }
 
@@ -355,7 +355,7 @@
 }
 
 .edit-button {
-    background-color: #ff0b0b;
+    background-color: #e05d15;
     color: white;
     border: none;
     padding: 15px 30px;
@@ -363,6 +363,49 @@
     cursor: pointer;
     align-self: flex-end;
     margin-top: 20px;
-    margin-right: 20px;
+    margin-right: 10px;
     font-size: 15px;
 }
+
+
+.special-card {
+    background-color: #e05d15;
+    position: relative;
+    overflow: hidden;
+}
+
+.special-card .card-id {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 2; /* Assurez-vous que l'ID est au-dessus du flou */
+}
+
+.special-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(4px);
+    z-index: 1; /* Assurez-vous que le flou est en dessous de l'ID */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.special-card:hover::before {
+    opacity: 1;
+}
+
+.special-card:hover .card-id {
+    opacity: 1;
+}
+
