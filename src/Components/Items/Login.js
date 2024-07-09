@@ -32,7 +32,7 @@ function Login() {
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:8000/api/login', {
+            const response = await fetch('https://matchmaking-api.vercel.app/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -55,7 +55,7 @@ function Login() {
     const handleRegisterSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:8000/api/register', {
+            const response = await fetch('https://matchmaking-api.vercel.app/api/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
