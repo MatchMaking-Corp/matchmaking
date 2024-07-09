@@ -22,11 +22,17 @@ function ChoicePage() {
             <div className="cards-container">
                 <div className="card" onClick={handleProfessionalClick}>
                     <img src={ProImage} alt="Gestion Professionnel" className="card-image-pro" />
-                    <p>Gestion Professionnel</p>
+                    <h2>Gestion Professionnel</h2>
+                    <div>
+                        <p>Outils de gestion des réservations permettant aux clubs de visualiser leur statistiques, l'admission de nouveaux joueurs, etc.</p>
+                    </div>
                 </div>
                 <div className="card" onClick={handleUserClick}>
-                    <img src={UserImage} alt="Utilisateurs" className="card-image-user" />
-                    <p>Utilisateurs</p>
+                    <img src={UserImage} alt="Utilisateurs" className="card-image-user"/>
+                    <h2>Joueurs de Padel</h2>
+                    <div>
+                        <p>Application destinée aux joueurs de Padle afin de leurs faciliter la réservation de parties tout en leurs permettant de matcher avec d'autres joueurs.</p>
+                    </div>
                 </div>
             </div>
         </div>

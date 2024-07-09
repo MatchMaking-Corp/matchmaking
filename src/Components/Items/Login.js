@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
-import '../../Styles/Items/Login.css';
-import Logo from "../../Sources/logos/matchmaking.png";
+import Logo from '../../Sources/logos/matchmaking.png';
+import '../../Styles/Items/Login.css'
 
 function Login() {
     const [isRegister, setIsRegister] = useState(false);
@@ -32,14 +32,20 @@ function Login() {
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
         try {
-            // Remplacer par un appel à votre API
-            const response = await fakeApiLogin(loginData);
-            if (response.success) {
-                Cookies.set('userToken', response.token, { expires: 1 }); // Expire in 1 day
-                console.log('Connexion réussie', response);
+            const response = await fetch('http://localhost:8000/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(loginData)
+            });
+            const data = await response.json();
+            if (response.ok) {
+                Cookies.set('userToken', data.token, { expires: 1 });
+                console.log('Connexion réussie', data);
                 navigate('/choice-page');
             } else {
-                console.error('Erreur de connexion', response.message);
+                console.error('Erreur de connexion', data.message);
             }
         } catch (error) {
             console.error('Erreur de connexion', error);
@@ -49,16 +55,24 @@ function Login() {
     const handleRegisterSubmit = async (e) => {
         e.preventDefault();
         try {
-            // Remplacer par un appel à votre API
-            const response = await fakeApiRegister(registerData);
-            if (response.success) {
-                console.log('Inscription réussie', response);
-                setIsRegister(false); // Revenir à la page de connexion après inscription réussie
+            const response = await fetch('http://localhost:8000/api/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(registerData)
+            });
+            const data = await response.json();
+            if (response.ok) {
+                console.log('Inscription réussie', data);
+                setIsRegister(false);
             } else {
-                console.error('Erreur d\'inscription', response.message);
+                console.error('Erreur d\'inscription', data);
+                // Afficher ou logguer l'erreur ici
             }
         } catch (error) {
             console.error('Erreur d\'inscription', error);
+            // Afficher ou logguer l'erreur ici
         }
     };
 
@@ -66,8 +80,7 @@ function Login() {
         <div className="login-container">
             {isRegister ? (
                 <form className="login-form" onSubmit={handleRegisterSubmit}>
-                    <img src={Logo} alt="Logo"
-                         className="login-logo"/>
+                    <img src={Logo} alt="Logo" className="login-logo" />
                     <h2>Créer un compte</h2>
                     <input
                         type="text"
@@ -115,8 +128,7 @@ function Login() {
                 </form>
             ) : (
                 <form className="login-form" onSubmit={handleLoginSubmit}>
-                    <img src={Logo} alt="Logo"
-                         className="login-logo"/>
+                    <img src={Logo} alt="Logo" className="login-logo" />
                     <h2>Connexion</h2>
                     <input
                         type="email"
@@ -143,22 +155,5 @@ function Login() {
         </div>
     );
 }
-
-// Simulations d'appels API
-const fakeApiLogin = async (data) => {
-    // Simuler un délai
-    await new Promise(resolve => setTimeout(resolve, 500));
-    if (data.email === 'matchmaking@gmail.com' && data.password === 'M@tchM@king') {
-        return { success: true, token: 'fake-jwt-token' };
-    } else {
-        return { success: false, message: 'Identifiants incorrects' };
-    }
-};
-
-const fakeApiRegister = async (data) => {
-    // Simuler un délai
-    await new Promise(resolve => setTimeout(resolve, 500));
-    return { success: true, token: 'fake-jwt-token' };
-};
 
 export default Login;

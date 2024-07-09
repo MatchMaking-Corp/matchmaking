@@ -10,8 +10,9 @@
     text-align: center;
 }
 
-.choice-page-container h1 {
+.choice-page-container h1, .choice-page-container p {
     margin-bottom: -10px;
+    color: white;
 }
 
 .cards-container {
@@ -52,5 +53,7 @@
 
 .card p {
     font-size: 1.2em;
-    font-weight: bold;
+    margin-top: -0.5rem;
+    text-align: justify;
+    color: #111111;
 }
