@@ -53,7 +53,6 @@ function Login() {
         }
     };
 
-
     const handleRegisterSubmit = async (e) => {
         e.preventDefault();
         try {
