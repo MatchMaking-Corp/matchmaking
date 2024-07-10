@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/matchmaking/static/css/main.72e06d0b.css",
-    "main.js": "/matchmaking/static/js/main.71d89f9b.js",
+    "main.css": "/matchmaking/static/css/main.a79d4c16.css",
+    "main.js": "/matchmaking/static/js/main.6288e1f6.js",
     "static/js/453.eee502cc.chunk.js": "/matchmaking/static/js/453.eee502cc.chunk.js",
+    "static/media/utilisateurs.png": "/matchmaking/static/media/utilisateurs.6c4c7238a2871eb44d8e.png",
+    "static/media/professionnel.png": "/matchmaking/static/media/professionnel.9eb4fc9890fa0a8a80e4.png",
+    "static/media/matchmaking.png": "/matchmaking/static/media/matchmaking.673dcf694a75086beb45.png",
     "index.html": "/matchmaking/index.html",
-    "main.72e06d0b.css.map": "/matchmaking/static/css/main.72e06d0b.css.map",
-    "main.71d89f9b.js.map": "/matchmaking/static/js/main.71d89f9b.js.map",
+    "main.a79d4c16.css.map": "/matchmaking/static/css/main.a79d4c16.css.map",
+    "main.6288e1f6.js.map": "/matchmaking/static/js/main.6288e1f6.js.map",
     "453.eee502cc.chunk.js.map": "/matchmaking/static/js/453.eee502cc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.72e06d0b.css",
-    "static/js/main.71d89f9b.js"
+    "static/css/main.a79d4c16.css",
+    "static/js/main.6288e1f6.js"
   ]
 }
