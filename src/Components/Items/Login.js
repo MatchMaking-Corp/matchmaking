@@ -33,7 +33,6 @@ function Login() {
         e.preventDefault();
         try {
             const response = await fetch('http://localhost:8000/api/login', {
-            // const response = await fetch('http://api-zeta-seven-73.vercel.app/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -56,8 +55,7 @@ function Login() {
     const handleRegisterSubmit = async (e) => {
         e.preventDefault();
         try {
-            // const response = await fetch('https://api-zeta-seven-73.vercel.app/api/register', {
-            const response = await fetch('http://loclahost:8000/api/register', {
+            const response = await fetch('http://localhost:8000/api/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -70,11 +68,9 @@ function Login() {
                 setIsRegister(false);
             } else {
                 console.error('Erreur d\'inscription', data);
-                // Afficher ou logguer l'erreur ici
             }
         } catch (error) {
             console.error('Erreur d\'inscription', error);
-            // Afficher ou logguer l'erreur ici
         }
     };
 
