@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useUser } from '../../Context/UserContext';
 import Cookies from 'js-cookie';
 import Logo from '../../Sources/logos/matchmaking.png';
 import '../../Styles/Items/Login.css'
@@ -18,6 +19,7 @@ function Login() {
         password: '',
     });
     const navigate = useNavigate();
+    const { setUser } = useUser();
 
     const handleLoginChange = (e) => {
         const { name, value } = e.target;
@@ -43,6 +45,7 @@ function Login() {
             if (response.ok) {
                 Cookies.set('userToken', data.token, { expires: 1 });
                 console.log('Connexion réussie', data);
+                setUser(data.user);
                 navigate('/choice-page');
             } else {
                 console.error('Erreur de connexion', data.message);

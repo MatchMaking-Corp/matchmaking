@@ -2,7 +2,7 @@
   "name": "professionnels",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://testablet.github.io/matchmaking",
+  "homepage": "/",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && sudo cp -r build/* /var/www/html/",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
