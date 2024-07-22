@@ -46,6 +46,7 @@ function Login() {
                 Cookies.set('userToken', data.token, { expires: 1 });
                 console.log('Connexion réussie', data);
                 setUser(data.user);
+                console.log('User : ',setUser)
                 navigate('/choice-page');
             } else {
                 console.error('Erreur de connexion', data.message);
