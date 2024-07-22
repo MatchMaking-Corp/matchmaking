@@ -11,6 +11,7 @@ const Topbar = () => {
     const [notificationsActive, setNotificationsActive] = useState(false);
     const navigate = useNavigate();
     const { user } = useUser();
+    
 
     const toggleDropdown = () => {
         setDropdown1Active(!dropdown1Active);
@@ -33,7 +34,7 @@ const Topbar = () => {
     return (
         <div className="topbar">
             <div className="left">
-                <h2>Bonjour, {user?.firstName || 'Utilisateur'}</h2>
+                <h2>Bonjour, {user?.firstName || 'Prénom'}</h2>
             </div>
             <div className="right">
                 <button className="home-btn" onClick={handleHome}>
@@ -49,8 +50,8 @@ const Topbar = () => {
                     <button className="profile-btn" onClick={toggleDropdown}>
                         <div className="profile-icon">MJ</div>
                         <div className="profile-info">
-                            <div>{user?.firstName || 'Utilisateur'} {user?.lastName || 'Utilisateur'}</div>
-                            <div>{user?.email || 'Utilisateur'}</div>
+                            <div>{user?.firstName || 'Prénom'} {user?.lastName || 'Nom'}</div>
+                            <div>{user?.email || 'Email'}</div>
                         </div>
                         <FontAwesomeIcon icon={dropdown1Active ? faChevronDown : faChevronRight}
                                          className="dropdown-icon" />
