@@ -3,12 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faChevronDown, faChevronRight, faHome, faMoon } from '@fortawesome/free-solid-svg-icons';
 import '../Styles/Topbar.css';
 import { useNavigate } from "react-router-dom";
+import { useUser } from '../Context/UserContext';
 import Notification from './Items/Notifications';
 
 const Topbar = () => {
     const [dropdown1Active, setDropdown1Active] = useState(false);
     const [notificationsActive, setNotificationsActive] = useState(false);
     const navigate = useNavigate();
+    const { user } = useUser();
 
     const toggleDropdown = () => {
         setDropdown1Active(!dropdown1Active);
@@ -31,7 +33,7 @@ const Topbar = () => {
     return (
         <div className="topbar">
             <div className="left">
-                <h2>Bonjour, Marc</h2>
+                <h2>Bonjour, {user?.firstName || 'Utilisateur'}</h2>
             </div>
             <div className="right">
                 <button className="home-btn" onClick={handleHome}>
@@ -47,8 +49,8 @@ const Topbar = () => {
                     <button className="profile-btn" onClick={toggleDropdown}>
                         <div className="profile-icon">MJ</div>
                         <div className="profile-info">
-                            <div>Vitrole PADLE</div>
-                            <div>vpadle@goodmail.io</div>
+                            <div>{user?.firstName || 'Utilisateur'} {user?.lastName || 'Utilisateur'}</div>
+                            <div>{user?.email || 'Utilisateur'}</div>
                         </div>
                         <FontAwesomeIcon icon={dropdown1Active ? faChevronDown : faChevronRight}
                                          className="dropdown-icon" />
