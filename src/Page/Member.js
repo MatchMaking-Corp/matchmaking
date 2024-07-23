@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUsers, faUser, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+import { faUsers, faUser, faEllipsisV, faPlus } from '@fortawesome/free-solid-svg-icons';
 import '../Styles/Member.css';
 
 const Member = () => {
@@ -11,6 +11,37 @@ const Member = () => {
         { firstName: "Anna", lastName: "Smith", email: "anna.smith@example.com", status: "Active", joined: "07/08/2020" },
     ]);
 
+    const [formVisible, setFormVisible] = useState(false);
+    const [newMember, setNewMember] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        status: 'Active',
+        joined: ''
+    });
+
+    const toggleForm = () => {
+        setFormVisible(!formVisible);
+    };
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setNewMember({ ...newMember, [name]: value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setMembers([...members, newMember]);
+        setNewMember({
+            firstName: '',
+            lastName: '',
+            email: '',
+            status: 'Active',
+            joined: ''
+        });
+        setFormVisible(false);
+    };
+
     return (
         <div className="member-list">
             <div className="table-header">
@@ -20,10 +51,41 @@ const Member = () => {
                 </div>
                 <div className="header-right">
                     <span>{members.length}</span>
+                    <FontAwesomeIcon icon={faPlus} className="add-icon" onClick={toggleForm} />
                     <FontAwesomeIcon icon={faUser} />
                     <FontAwesomeIcon icon={faEllipsisV} className="menu-icon" />
                 </div>
             </div>
+            {formVisible && (
+                <form className="member-form" onSubmit={handleSubmit}>
+                    <h3>Ajouter un Membre</h3>
+                    <label>
+                        Prénom:
+                        <input type="text" name="firstName" value={newMember.firstName} onChange={handleInputChange} required />
+                    </label>
+                    <label>
+                        Nom:
+                        <input type="text" name="lastName" value={newMember.lastName} onChange={handleInputChange} required />
+                    </label>
+                    <label>
+                        Email:
+                        <input type="email" name="email" value={newMember.email} onChange={handleInputChange} required />
+                    </label>
+                    <label>
+                        Statut:
+                        <select name="status" value={newMember.status} onChange={handleInputChange}>
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                            <option value="Pending">Pending</option>
+                        </select>
+                    </label>
+                    <label>
+                        Date d'inscription:
+                        <input type="date" name="joined" value={newMember.joined} onChange={handleInputChange} />
+                    </label>
+                    <button type="submit">Ajouter</button>
+                </form>
+            )}
             <table className="rounded-table">
                 <thead>
                 <tr>
