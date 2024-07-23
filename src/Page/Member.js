@@ -50,8 +50,8 @@ const Member = () => {
                     <h2>Liste des Membres</h2>
                 </div>
                 <div className="header-right">
-                    <span>{members.length}</span>
                     <FontAwesomeIcon icon={faPlus} className="add-icon" onClick={toggleForm} />
+                    <span>{members.length}</span>
                     <FontAwesomeIcon icon={faUser} />
                     <FontAwesomeIcon icon={faEllipsisV} className="menu-icon" />
                 </div>

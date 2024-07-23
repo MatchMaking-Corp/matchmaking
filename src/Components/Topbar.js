@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell, faChevronDown, faChevronRight, faHome, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faChevronDown, faChevronRight, faHome, faMoon, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import '../Styles/Topbar.css';
 import { useNavigate } from "react-router-dom";
 import { useUser } from '../Context/UserContext';
@@ -10,7 +10,7 @@ const Topbar = () => {
     const [dropdown1Active, setDropdown1Active] = useState(false);
     const [notificationsActive, setNotificationsActive] = useState(false);
     const navigate = useNavigate();
-    const { user } = useUser();
+    const { user, setUser } = useUser();
 
     const getInitials = (firstName, lastName) => {
         const firstInitial = firstName ? firstName.charAt(0) : '';
@@ -28,6 +28,12 @@ const Topbar = () => {
 
     const handleNotifications = () => {
         setNotificationsActive(!notificationsActive);
+    };
+
+    const handleLogout = () => {
+        document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        setUser(null);
+        navigate('/login');
     };
 
     const notifications = [
@@ -58,13 +64,14 @@ const Topbar = () => {
                             <div>{user?.firstName || 'Prénom'} {user?.lastName || 'Nom'}</div>
                             <div>{user?.email || 'Email'}</div>
                         </div>
-                        <FontAwesomeIcon icon={dropdown1Active ? faChevronDown : faChevronRight}
-                                         className="dropdown-icon" />
+                        <FontAwesomeIcon icon={dropdown1Active ? faChevronDown : faChevronRight} className="dropdown-icon" />
                     </button>
                     {dropdown1Active && (
                         <ul className="submenu">
-                            <li><a href="#item3">Item 3</a></li>
-                            <li><a href="#item4">Item 4</a></li>
+                            <li><a href="/profil"><FontAwesomeIcon icon={faCog}/> Profil</a></li>
+                            <li><a href="/settings"><FontAwesomeIcon icon={faCog}/> Paramètres</a></li>
+                            <li><a href="#" onClick={handleLogout}><FontAwesomeIcon
+                                icon={faSignOutAlt}/> Déconnexion</a></li>
                         </ul>
                     )}
                 </div>

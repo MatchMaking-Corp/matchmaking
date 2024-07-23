@@ -92,15 +92,17 @@
     padding: 0;
     margin: 0;
     position: absolute;
-    top: 100%; /* Positionne le sous-menu en dessous du bouton */
+    top: 100%;
     left: 0;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 999; /* Assure que le sous-menu est au-dessus de tout */
+    z-index: 999;
 }
 
 .submenu li {
     padding: 8px 20px;
+    display: flex;
+    align-items: center;
 }
 
 .submenu li a {
@@ -108,11 +110,17 @@
     color: #333;
     display: block;
     transition: background-color 0.3s;
+    align-items: center;
 }
 
 .submenu li a:hover {
     background-color: #f0f0f0;
 }
+
+.submenu li a svg {
+    margin-right: 10px;
+}
+
 
 .dropdown-icon {
     margin-left: 10px; /* Ajustement demandé */
