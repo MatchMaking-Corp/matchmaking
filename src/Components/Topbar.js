@@ -11,7 +11,12 @@ const Topbar = () => {
     const [notificationsActive, setNotificationsActive] = useState(false);
     const navigate = useNavigate();
     const { user } = useUser();
-    
+
+    const getInitials = (firstName, lastName) => {
+        const firstInitial = firstName ? firstName.charAt(0) : '';
+        const lastInitial = lastName ? lastName.charAt(0) : '';
+        return `${firstInitial}${lastInitial}`.toUpperCase();
+    };
 
     const toggleDropdown = () => {
         setDropdown1Active(!dropdown1Active);
@@ -48,7 +53,7 @@ const Topbar = () => {
                 </button>
                 <div className={`dropdown profile ${dropdown1Active ? 'active' : ''}`}>
                     <button className="profile-btn" onClick={toggleDropdown}>
-                        <div className="profile-icon">MJ</div>
+                        <div className="profile-icon"> {getInitials(user?.firstName, user?.lastName) || 'PN'}</div>
                         <div className="profile-info">
                             <div>{user?.firstName || 'Prénom'} {user?.lastName || 'Nom'}</div>
                             <div>{user?.email || 'Email'}</div>
