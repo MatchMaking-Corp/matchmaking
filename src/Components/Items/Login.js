@@ -42,13 +42,17 @@ function Login() {
                 body: JSON.stringify(loginData)
             });
             const data = await response.json();
+            console.log('API response:', data); // Vérifie toute la réponse de l'API
             if (response.ok) {
                 Cookies.set('userToken', data.token, { expires: 1 });
                 console.log('Connexion réussie', data);
-                console.log('User data:', data.user); // Vérifie les données utilisateur dans la réponse
-                setUser(data.user);
-                console.log('User context:', data.user); // Vérifie que setUser reçoit les bonnes données
-                navigate('/choice-page');
+                if (data.user) {
+                    setUser(data.user);
+                    console.log('User data:', data.user); // Vérifie les données utilisateur dans la réponse
+                    navigate('/choice-page');
+                } else {
+                    console.error('Données utilisateur manquantes dans la réponse', data);
+                }
             } else {
                 console.error('Erreur de connexion', data.message);
             }
@@ -56,6 +60,7 @@ function Login() {
             console.error('Erreur de connexion', error);
         }
     };
+
 
     const handleRegisterSubmit = async (e) => {
         e.preventDefault();
