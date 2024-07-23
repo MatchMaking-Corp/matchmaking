@@ -11,6 +11,7 @@ import Login from './Components/Items/Login';
 import BetaPopup from './Components/Items/BetaPopup';
 import ChoicePage from './Page/ChoicePage';
 import InDevelopment from './Components/Items/InDevelopment';
+import Member from "./Page/Member";
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -49,6 +50,7 @@ function AppContent() {
                     <Routes>
                         <Route path="/waiting-room" element={<WaitingRoom />} />
                         <Route path="/manage-reservation" element={<ManageReservation />} />
+                        <Route path="/member" element={<Member />}/>
                     </Routes>
                 </div>
             </div>

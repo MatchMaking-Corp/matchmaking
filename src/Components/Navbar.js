@@ -22,6 +22,10 @@ const Navbar = () => {
         navigate('/manage-reservation');
     };
 
+    const handleMember = () => {
+        navigate('/member');
+    };
+
     return (
         <div className="navbar">
             <div className="top-section">
@@ -56,7 +60,7 @@ const Navbar = () => {
                         )}
                     </li>
                     <li>
-                        <div className="button">
+                        <div className="button" onClick={handleMember}>
                             <FontAwesomeIcon icon={faUserGroup} />
                             <span>Adhérents</span>
                         </div>
