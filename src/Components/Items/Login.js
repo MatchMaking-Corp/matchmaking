@@ -45,8 +45,9 @@ function Login() {
             if (response.ok) {
                 Cookies.set('userToken', data.token, { expires: 1 });
                 console.log('Connexion réussie', data);
+                console.log('User data:', data.user); // Vérifie les données utilisateur dans la réponse
                 setUser(data.user);
-                console.log('User informations : ',data.user)
+                console.log('User context:', data.user); // Vérifie que setUser reçoit les bonnes données
                 navigate('/choice-page');
             } else {
                 console.error('Erreur de connexion', data.message);
