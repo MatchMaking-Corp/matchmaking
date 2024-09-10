@@ -12,6 +12,7 @@ import BetaPopup from './Components/Items/BetaPopup';
 import ChoicePage from './Page/ChoicePage';
 import InDevelopment from './Components/Items/InDevelopment';
 import Member from "./Page/Member";
+import LandingPage from "./LandingPage/LandingPage";
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -26,6 +27,7 @@ function App() {
             <>
                 <BetaPopup />
                 <Routes>
+                    <Route path="/" element={<LandingPage />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/choice-page" element={isAuthenticated ? <ChoicePage /> : <Navigate to="/login" />} />
                     <Route path="/in-development" element={isAuthenticated ? <InDevelopment /> : <Navigate to="/login" />} />

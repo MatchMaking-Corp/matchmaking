@@ -1,0 +1,101 @@
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px;
+    margin-top: 8rem;
+    font-family: Anton, sans-serif;
+}
+
+.home-container__left-column {
+    flex: 1;
+    padding-right: 20px;
+    text-align: center;
+}
+
+.home-container__right-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-container__title {
+    font-size: 5rem;
+}
+
+.home-container__title .match {
+    color: #000;
+}
+
+.home-container__title .making {
+    color: #FF6600;
+}
+
+.home__subtitle {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 100px;
+    color: #000;
+}
+
+.home__description {
+    font-size: 1.2rem;
+    color: #000;
+    margin-bottom: 100px;
+    line-height: 1.5;
+}
+
+.home__buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.home__button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.signup-button {
+    background-color: #FF6600;
+    color: #fff;
+    border: none;
+    margin-right: 10px;
+}
+
+.signup-button:hover {
+    background-color: #e65a00;
+    transform: scale(1.05);
+}
+
+.learn-more-button {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+}
+
+.learn-more-button:hover {
+    background-color: #000;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.home__image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    width: 100%;
+    height: 70%;
+    max-width: 500px;
+    border-color: #111111;
+}
+
+.grid-image {
+    width: 100%;
+    border-radius: 10%;
+    object-fit: cover;
+}

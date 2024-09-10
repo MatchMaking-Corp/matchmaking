@@ -42,7 +42,7 @@ function Login() {
                 body: JSON.stringify(loginData)
             });
             const data = await response.json();
-            console.log('API response:', data); // Vérifie toute la réponse de l'API
+            console.log('API response:', data);
             if (response.ok) {
                 Cookies.set('userToken', data.token, { expires: 1 });
                 console.log('Connexion réussie', data);

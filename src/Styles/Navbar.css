@@ -1,105 +1,100 @@
-.navbar {
-    height: 100%;
-    width: 300px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: white; /* Fond blanc */
-    color: black; /* Texte en noir */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 999;
-    border-right: 0.5px solid black; /* Bordure noire à droite */
-}
+/*!* Login.css *!*/
+/*.login-container {*/
+/*    display: flex;*/
+/*    height: 100vh;*/
+/*    background-color: #fdf3e7;*/
+/*}*/
 
-.logo {
-    text-align: center;
-    padding: 20px 0;
-}
+/*.left-side, .right-side {*/
+/*    flex: 1;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
 
-.logo-img {
-    max-width: 75%;
-    height: auto;
-}
+/*.left-side {*/
+/*    width: 25%;*/
+/*    padding: 2rem;*/
+/*}*/
 
-.menu {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
+/*.right-side {*/
+/*    width: 75%;*/
+/*    background-color: #f06e02;*/
+/*    position: relative;*/
+/*}*/
 
-.menu li {
-    padding: 8px;
-    text-align: center;
-}
+/*.club .right-side {*/
+/*    background-color: #4455f4;*/
+/*}*/
 
-.bottom-menu {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 20px; /* Ajout d'un espace en bas pour le menu du bas */
-}
+/*.login-logo {*/
+/*    max-width: 150px;*/
+/*    margin-bottom: 1rem;*/
+/*}*/
 
-.dropdown, .button {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
+/*.login-prompt {*/
+/*    font-size: 1.2rem;*/
+/*    margin-bottom: 1.5rem;*/
+/*}*/
 
-.dropdown span, .button span {
-    flex-grow: 1;
-    text-align: left;
-    padding-left: 10px;
-    color: black; /* Texte en noir */
-}
+/*.login-form {*/
+/*    width: 100%;*/
+/*    max-width: 300px;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*}*/
 
-.dropdown:hover span, .button:hover span {
-    flex-grow: 1;
-    text-align: left;
-    padding-left: 10px;
-    color: #e05d15;
-}
+/*.input-container {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    background-color: #fff;*/
+/*    border-radius: 25px;*/
+/*    padding: 0.5rem;*/
+/*    margin-bottom: 1rem;*/
+/*    width: 100%;*/
+/*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+/*}*/
 
-.button {
-    justify-content: flex-start;
-}
+/*.icon {*/
+/*    background-color: #f06e02;*/
+/*    border-radius: 50%;*/
+/*    padding: 0.5rem;*/
+/*    margin-right: 0.5rem;*/
+/*    color: white;*/
+/*}*/
 
-.button span {
-    padding-left: 10px;
-    color: black; /* Texte en noir */
-}
+/*input {*/
+/*    flex: 1;*/
+/*    border: none;*/
+/*    outline: none;*/
+/*    padding: 0.5rem;*/
+/*    border-radius: 25px;*/
+/*}*/
 
-.dropdown:hover, .button:hover{
-    background-color: #f0f0f0; /* Couleur de fond au survol */
-    border-radius: 10px;
-    color: #e05d15;
-}
+/*button {*/
+/*    background-color: #f06e02;*/
+/*    color: white;*/
+/*    padding: 0.7rem 2rem;*/
+/*    border: none;*/
+/*    border-radius: 25px;*/
+/*    cursor: pointer;*/
+/*    width: 100%;*/
+/*    margin-top: 1rem;*/
+/*}*/
 
-.submenu {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    background-color: #f2f2f2; /* Couleur de fond du sous-menu */
-    border-top: 1px solid #ccc; /* Bordure supérieure grise */
-    border-bottom: 1px solid #ccc; /* Bordure inférieure grise */
-}
+/*button:hover {*/
+/*    background-color: #e05d15;*/
+/*}*/
 
-.submenu li {
-    padding: 8px;
-    text-align: left;
-    padding-left: 40px;
-}
+/*.switch-container {*/
+/*    position: absolute;*/
+/*    top: 20px;*/
+/*    right: 20px;*/
+/*    font-size: 1rem;*/
+/*}*/
 
-.submenu li a {
-    text-decoration: none;
-    color: black; /* Texte en noir */
-    display: block;
-    transition: background-color 0.3s;
-}
-
-.submenu li a:hover {
-    background-color: #e0e0e0; /* Couleur de fond au survol */
-}
+/*input[type="checkbox"] {*/
+/*    margin-right: 0.5rem;*/
+/*}*/
