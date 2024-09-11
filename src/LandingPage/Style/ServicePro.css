@@ -91,7 +91,7 @@
 
 .servicePro-mm__promo-text {
     position: absolute;
-    top: 0%;
+    top: 0;
     left: 50%;
     transform: translate(-50%, 0);
     padding: 20px;

@@ -6,7 +6,6 @@ import HomeLP2 from "./Content/HomeLP2";
 import ServiceMatchmakingLP from "./Content/ServiceMatchmakingLP";
 import StrongPoints from "./Content/StrongPoints";
 import ServicePro from "./Content/ServicePro";
-import TeamContact from "./Content/TeamContact";
 import FooterLP from "./FooterLP";
 
 const LandingPage = () => {
