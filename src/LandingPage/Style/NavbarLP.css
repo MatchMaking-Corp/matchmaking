@@ -33,13 +33,29 @@
     transition: color 0.3s ease;
 }
 
+.navbar__nav-item-next {
+    margin: 0 15px;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+}
+
 .navbar__nav-item--active {
     font-weight: bold;
     color: #FF6600;
 }
+.navbar__nav-item--active-next {
+    font-weight: bold;
+    color: #220adc;
+}
 
 .navbar__nav-item:hover {
     color: #FF6600;
+}
+
+.navbar__nav-item-next:hover {
+    color: #220adc;
 }
 
 .navbar__buttons {

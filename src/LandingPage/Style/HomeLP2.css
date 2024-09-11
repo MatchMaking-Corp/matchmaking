@@ -1,0 +1,38 @@
+.home-next-container {
+    margin-top: -2rem;
+    text-align: center;
+    padding: 20px;
+    font-family: Anton, sans-serif;
+}
+
+.home-next-container__stats {
+    display: flex;
+    justify-content: space-around;
+    /*margin-bottom: 40px;*/
+}
+
+.home-next-container__stat-item {
+    text-align: center;
+}
+
+.home-next-container__stat-value {
+    color: #f07c21;
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.home-next-container__stat-description {
+    margin-top: -3rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.home-next-container__banner {
+    background-color: #f1f1f1;
+    padding: 10px 0;
+}
+
+.home-next-container__banner-text {
+    font-size: 1.5rem;
+    color: #888;
+}

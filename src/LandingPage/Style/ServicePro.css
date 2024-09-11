@@ -1,0 +1,131 @@
+.servicePro-mm {
+    font-family: Anton, sans-serif;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.servicePro-mm__background-header {
+    position: absolute;
+    top: 30%;
+    left: -30%;
+    width: 200%;
+    height: 75rem;
+    background-color: #220adc;
+    transform: rotate(20deg);
+    z-index: -1;
+}
+
+.servicePro-mm__bloc {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    margin: 5rem 20%;
+    position: relative;
+    z-index: 1;
+}
+
+.servicePro-mm__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2% 5px;
+}
+
+.servicePro-mm__content-left {
+    text-align: left;
+    display: flex;
+}
+
+.servicePro-mm__content-img {
+    width: 100%;
+    max-width: 200px;
+}
+
+.servicePro-mm__content-title {
+    font-size: 3rem;
+}
+
+.servicePro-mm__content-title .match {
+    color: #000;
+}
+
+.servicePro-mm__content-title .makingpro {
+    color: #220adc;
+}
+
+.servicePro-mm__content-description {
+    font-size: 1.25rem;
+    color: #000;
+}
+
+.servicePro-mm__promo {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.servicePro-mm__promo-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.servicePro-mm__promo-image-left, .servicePro-mm__promo-image-right {
+    padding: 20px;
+}
+
+.servicePro-mm__promo-image-left img, .servicePro-mm__promo-image-right img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.servicePro-mm__promo-image-right {
+    position: relative;
+}
+
+.servicePro-mm__promo-text {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 20px;
+    text-align: center;
+}
+
+.servicePro-mm__promo-button {
+    background-color: #220ADC;
+    color: #ffffff;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: Anton, sans-serif;
+}
+
+.servicePro-mm__promo-table {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.servicePro-mm__promo-table-row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.servicePro-mm__promo-table-cell {
+    padding: 10px;
+    text-align: center;
+}
+

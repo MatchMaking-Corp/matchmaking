@@ -50,22 +50,19 @@ const NavbarLP = () => {
                 </li>
                 <li
                     onClick={() => scrollToSection('service_pro')}
-                    className={`navbar__nav-item ${activeSection === 'service_pro' ? 'navbar__nav-item--active' : ''}`}
+                    className={`navbar__nav-item-next ${activeSection === 'service_pro' ? 'navbar__nav-item--active-next' : ''}`}
                 >
                     Service Pro
                 </li>
                 <li
-                    onClick={() => scrollToSection('team')}
-                    className={`navbar__nav-item ${activeSection === 'team' ? 'navbar__nav-item--active' : ''}`}
+                    onClick={() => scrollToSection('team_contact')}
+                    className={`navbar__nav-item-next ${activeSection === 'team' ? 'navbar__nav-item--active-next' : ''}`}
                 >
                     L'équipe
                 </li>
             </ul>
 
             <div className="navbar__buttons">
-                <button className="navbar__langage-button">
-                    <FontAwesomeIcon icon={faGlobe}/>
-                </button>
                 <button onClick={() => window.location.href = '/login'}
                         className="navbar__button navbar__button--outline">
                     Se connecter
@@ -74,8 +71,11 @@ const NavbarLP = () => {
                         className="navbar__button navbar__button--filled">
                     S'inscrire
                     <span className="navbar__profile-icon">
-                        <FontAwesomeIcon icon={faUser} />
+                        <FontAwesomeIcon icon={faUser}/>
                     </span>
+                </button>
+                <button className="navbar__langage-button">
+                    <FontAwesomeIcon icon={faGlobe}/>
                 </button>
             </div>
         </nav>
