@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import PhotoQuentin from '../../Sources/photos/team_contact/Quentin.png';
 import PhotoTeddy from '../../Sources/photos/team_contact/Teddy.png';
 import '../Style/TeamContact.css';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const TeamContact = () => {
     const [messageStatus, setMessageStatus] = useState('');
@@ -30,17 +29,13 @@ const TeamContact = () => {
     return (
         <div id="team_contact" className="team-contact">
             <div className="team-contact__images">
-                <a className="team-contact__image-wrapper" href='https://www.linkedin.com/in/quentindx/'>
+                <a className="team-contact__image-wrapper" href='https://www.instagram.com/matchmaking_ig/' target="_blank" rel="noopener noreferrer">
                     <img src={PhotoQuentin} alt="Membre de l'équipe" className="team-contact__image"/>
                     <div className="team-contact__overlay">
                         <p className="team-contact__name">DESAUBLIAUX Quentin</p>
-                        <a href="https://www.linkedin.com/in/quentindx/" target="_blank" rel="noopener noreferrer"
-                           className="team-contact__linkedin">
-                            <FontAwesomeIcon icon="fa-brands fa-linkedin"/>
-                        </a>
                     </div>
                 </a>
-                <a className="team-contact__image-wrapper" href='https://www.linkedin.com/in/teddy-establet-b783b41b6/'>
+                <a className="team-contact__image-wrapper" href='https://www.instagram.com/matchmaking_ig/' target="_blank" rel="noopener noreferrer">
                     <img src={PhotoTeddy} alt="Membre de l'équipe" className="team-contact__image"/>
                     <div className="team-contact__overlay">
                         <p className="team-contact__name">ESTABLET Teddy</p>
@@ -58,7 +53,7 @@ const TeamContact = () => {
                 <button type="submit" className="team-contact__button">Envoyer</button>
             </form>
 
-            {messageStatus && <p>{messageStatus}</p>}
+            {/*{messageStatus && <p>{messageStatus}</p>}*/}
         </div>
     );
 };
