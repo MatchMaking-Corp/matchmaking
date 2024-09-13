@@ -39,6 +39,9 @@ const StrongPoints = () => {
                     </div>
                 ))}
             </div>
+            <div className="skills__banner">
+                <p className="skills__banner-text">Bannière pour les logos Lorem Ipsum</p>
+            </div>
         </div>
     );
 };

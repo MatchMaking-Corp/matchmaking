@@ -14,8 +14,8 @@
 
 .skills__item {
     flex: 1 1 40%;
-    min-width: 250px;
-    max-width: 300px;
+    min-width: 300px;
+    max-width: 450px;
     padding: 10px;
     background-color: white;
     border-radius: 8px;
@@ -31,4 +31,15 @@
 .skills__description {
     font-size: 1rem;
     color: #666;
+}
+
+.skills__banner {
+    margin-top: 2rem;
+    background-color: #f1f1f1;
+    padding: 10px 0;
+}
+
+.skills__banner-text {
+    font-size: 1.5rem;
+    color: #888;
 }

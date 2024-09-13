@@ -18,9 +18,6 @@ const HomeLP2 = () => {
                     <p className="home-next-container__stat-description">Configurez un rayon de recherche adapté.</p>
                 </div>
             </div>
-            <div className="home-next-container__banner">
-                <p className="home-next-container__banner-text">Bannière pour les logos Lorem Ipsum</p>
-            </div>
         </div>
     );
 }
