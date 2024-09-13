@@ -1,7 +1,8 @@
 .footer-lp {
     background-color: #000;
-    height: 475px;
+    height: 250px;
     margin-top: -200px;
     z-index: -1;
     position: static;
+    overflow: hidden;
 }

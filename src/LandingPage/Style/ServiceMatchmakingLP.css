@@ -3,6 +3,7 @@
     color: #333;
     padding: 20px;
     text-align: center;
+    overflow: hidden;
 }
 
 .service-mm__header {
