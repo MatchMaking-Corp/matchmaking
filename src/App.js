@@ -13,6 +13,7 @@ import ChoicePage from './Page/ChoicePage';
 import InDevelopment from './Components/Items/InDevelopment';
 import Member from "./Page/Member";
 import LandingPage from "./LandingPage/LandingPage";
+import ComingSoon from "./Page/ComingSoon";
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -27,15 +28,15 @@ function App() {
             <>
                 <BetaPopup />
                 <Routes>
-                    <Route path="/" element={<LandingPage />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/choice-page" element={isAuthenticated ? <ChoicePage /> : <Navigate to="/login" />} />
-                    <Route path="/in-development" element={isAuthenticated ? <InDevelopment /> : <Navigate to="/login" />} />
-                    {isAuthenticated ? (
-                        <Route path="*" element={<AppContent />} />
-                    ) : (
-                        <Route path="*" element={<Navigate to="/login" />} />
-                    )}
+                    <Route path="/" element={<ComingSoon />} />
+                    {/*<Route path="/login" element={<Login />} />*/}
+                    {/*<Route path="/choice-page" element={isAuthenticated ? <ChoicePage /> : <Navigate to="/login" />} />*/}
+                    {/*<Route path="/in-development" element={isAuthenticated ? <InDevelopment /> : <Navigate to="/login" />} />*/}
+                    {/*{isAuthenticated ? (*/}
+                    {/*    <Route path="*" element={<AppContent />} />*/}
+                    {/*) : (*/}
+                    {/*    <Route path="*" element={<Navigate to="/login" />} />*/}
+                    {/*)}*/}
                 </Routes>
             </>
         </UserProvider>

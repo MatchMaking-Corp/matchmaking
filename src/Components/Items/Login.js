@@ -1,167 +1,135 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useUser } from '../../Context/UserContext';
-import Cookies from 'js-cookie';
-import Logo from '../../Sources/logos/matchmaking.png';
-import '../../Styles/Items/Login.css'
+import Switch from '@mui/material/Switch';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import '../../Styles/Items/Login.css';
+import Logo from "../../Sources/logos/MatchMaking_Orange.png";
+import LogoClub from "../../Sources/logos/MatchMaking_Bleu.png";
+import imageJoueur from "../../Sources/photos/service_matchmaking/photo7.png";
+import imageClub from "../../Sources/photos/service_matchmaking/photo8.png";
 
-function Login() {
-    const [isRegister, setIsRegister] = useState(false);
-    const [loginData, setLoginData] = useState({
-        email: '',
-        password: '',
-    });
-    const [registerData, setRegisterData] = useState({
-        firstName: '',
-        lastName: '',
-        company: '',
-        email: '',
-        password: '',
-    });
-    const navigate = useNavigate();
-    const { setUser } = useUser();
+const Login = () => {
+    const [isClubMode, setIsClubMode] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
 
-    const handleLoginChange = (e) => {
-        const { name, value } = e.target;
-        setLoginData({ ...loginData, [name]: value });
+    const handleModeSwitch = () => {
+        setIsClubMode(!isClubMode);
     };
 
-    const handleRegisterChange = (e) => {
-        const { name, value } = e.target;
-        setRegisterData({ ...registerData, [name]: value });
-    };
-
-    const handleLoginSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await fetch('http://37.187.181.230:3000/api/auth/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(loginData)
-            });
-            const data = await response.json();
-            console.log('API response:', data);
-            if (response.ok) {
-                Cookies.set('userToken', data.token, { expires: 1 });
-                console.log('Connexion réussie', data);
-                if (data.user) {
-                    setUser(data.user);
-                    console.log('User data:', data.user); // Vérifie les données utilisateur dans la réponse
-                    navigate('/choice-page');
-                } else {
-                    console.error('Données utilisateur manquantes dans la réponse', data);
-                }
-            } else {
-                console.error('Erreur de connexion', data.message);
-            }
-        } catch (error) {
-            console.error('Erreur de connexion', error);
-        }
-    };
-
-
-    const handleRegisterSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await fetch('http://37.187.181.230:3000/api/auth/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(registerData)
-            });
-            const data = await response.json();
-            if (response.ok) {
-                console.log('Inscription réussie', data);
-                setIsRegister(false);
-            } else {
-                console.error('Erreur d\'inscription', data);
-            }
-        } catch (error) {
-            console.error('Erreur d\'inscription', error);
-        }
+    const handleShowPassword = () => {
+        setShowPassword(!showPassword);
     };
 
     return (
-        <div className="login-container">
-            {isRegister ? (
-                <form className="login-form" onSubmit={handleRegisterSubmit}>
-                    <img src={Logo} alt="Logo" className="login-logo" />
-                    <h2>Créer un compte</h2>
-                    <input
-                        type="text"
-                        name="firstName"
-                        placeholder="Prénom"
-                        value={registerData.firstName}
-                        onChange={handleRegisterChange}
-                        required
-                    />
-                    <input
-                        type="text"
-                        name="lastName"
-                        placeholder="Nom"
-                        value={registerData.lastName}
-                        onChange={handleRegisterChange}
-                        required
-                    />
-                    <input
-                        type="text"
-                        name="company"
-                        placeholder="Entreprise (optionnel)"
-                        value={registerData.company}
-                        onChange={handleRegisterChange}
-                    />
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        value={registerData.email}
-                        onChange={handleRegisterChange}
-                        required
-                    />
-                    <input
-                        type="password"
-                        name="password"
-                        placeholder="Mot de passe"
-                        value={registerData.password}
-                        onChange={handleRegisterChange}
-                        required
-                    />
-                    <button type="submit">Créer un compte</button>
-                    <button type="button" onClick={() => setIsRegister(false)}>
-                        Retour à la connexion
-                    </button>
-                </form>
-            ) : (
-                <form className="login-form" onSubmit={handleLoginSubmit}>
-                    <img src={Logo} alt="Logo" className="login-logo" />
-                    <h2>Connexion</h2>
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        value={loginData.email}
-                        onChange={handleLoginChange}
-                        required
-                    />
-                    <input
-                        type="password"
-                        name="password"
-                        placeholder="Mot de passe"
-                        value={loginData.password}
-                        onChange={handleLoginChange}
-                        required
-                    />
-                    <button type="submit">Connexion</button>
-                    <button type="button" onClick={() => setIsRegister(true)}>
-                        Créer un compte
-                    </button>
-                </form>
+        <div className="login">
+            <div
+                className={`login__sidebar-player ${isClubMode ? 'login__sidebar-clubs' : ''}`}
+            ></div>
+            <div className="login__switch-container">
+                <span className="login__label">Espace Joueurs</span>
+                <Switch
+                    checked={isClubMode}
+                    onChange={handleModeSwitch}
+                    className="login__switch"
+                    color="primary"
+                    sx={{
+                        '& .MuiSwitch-switchBase.Mui-checked': {
+                            color: '#220ADC',
+                        },
+                        '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+                            backgroundColor: '#220ADC',
+                        },
+                        '& .MuiSwitch-track': {
+                            backgroundColor: '#FF6600',
+                        }
+                    }}
+                />
+                <span className="login__label">Espace Clubs</span>
+            </div>
+
+            {!isClubMode && (
+                <div className="login__content">
+                    <div className="login__form-container">
+                        <form className="login__form">
+                            <img src={Logo} alt="Login illustration" className="login__image"/>
+
+                            <div className="login__input-container">
+                                <input type="email" placeholder="Email" className="login__input"/>
+                                <FontAwesomeIcon icon={faEnvelope} className="login__icon-envelope"/>
+                            </div>
+
+                            <div className="login__input-container">
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    placeholder="Mot de passe"
+                                    className="login__input"
+                                />
+                                <FontAwesomeIcon
+                                    icon={showPassword ? faEyeSlash : faEye}
+                                    className="login__icon login__icon--clickable"
+                                    onClick={handleShowPassword}
+                                />
+                            </div>
+
+                            <div className="login__input-container">
+                                <a className="login__input-password-forgot">Mot de passe oublié ?</a>
+                            </div>
+
+                            <button type="submit" className="login__submit-button">Login</button>
+
+                            <div className="login__separator"></div>
+
+                            <button className="login__signup-button">S'inscrire</button>
+                        </form>
+                        <div className="login__image-container">
+                            <img src={imageJoueur} alt="Visual Representation" />
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {isClubMode && (
+                <div className="login__content">
+                    <div className="login__form-container">
+                        <form className="login__form">
+                            <img src={LogoClub} alt="Login illustration" className="login__image"/>
+
+                            <div className="login__input-container">
+                                <input type="email" placeholder="Email" className="login__input"/>
+                                <FontAwesomeIcon icon={faEnvelope} className="login-club__icon-envelope"/>
+                            </div>
+
+                            <div className="login__input-container">
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    placeholder="Mot de passe"
+                                    className="login__input"
+                                />
+                                <FontAwesomeIcon
+                                    icon={showPassword ? faEyeSlash : faEye}
+                                    className="login-club__icon login-club__icon--clickable"
+                                    onClick={handleShowPassword}
+                                />
+                            </div>
+
+                            <div className="login__input-container">
+                                <a className="login-club__input-password-forgot">Mot de passe oublié ?</a>
+                            </div>
+
+                            <button type="submit" className="login-club__submit-button">Login</button>
+
+                            <div className="login__separator"></div>
+
+                            <button className="login-club__contact-button">Nous contacter</button>
+                        </form>
+                        <div className="login__image-container">
+                            <img src={imageClub} alt="Visual Representation" />
+                        </div>
+                    </div>
+                </div>
             )}
         </div>
     );
-}
+};
 
 export default Login;
