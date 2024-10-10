@@ -26,7 +26,7 @@ function App() {
     return (
         <UserProvider>
             <>
-                <BetaPopup />
+                {/*<BetaPopup />*/}
                 <Routes>
                     <Route path="/" element={<ComingSoon />} />
                     {/*<Route path="/login" element={<Login />} />*/}
@@ -43,23 +43,23 @@ function App() {
     );
 }
 
-function AppContent() {
-    return (
-        <div className="App">
-            <Navbar />
-            <div className="main-content">
-                <Topbar />
-                <div className="content">
-                    <Routes>
-                        <Route path="/waiting-room" element={<WaitingRoom />} />
-                        <Route path="/manage-reservation" element={<ManageReservation />} />
-                        <Route path="/member" element={<Member />}/>
-                    </Routes>
-                </div>
-            </div>
-        </div>
-    );
-}
+// function AppContent() {
+//     return (
+//         <div className="App">
+//             <Navbar />
+//             <div className="main-content">
+//                 <Topbar />
+//                 <div className="content">
+//                     <Routes>
+//                         <Route path="/waiting-room" element={<WaitingRoom />} />
+//                         <Route path="/manage-reservation" element={<ManageReservation />} />
+//                         <Route path="/member" element={<Member />}/>
+//                     </Routes>
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// }
 
 export default function AppWrapper() {
     return (
